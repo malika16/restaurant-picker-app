@@ -2,6 +2,7 @@ package com.assessment.restaurantpickerservice.validate;
 
 import com.assessment.restaurantpickerservice.exception.RestaurantPickerException;
 import com.assessment.restaurantpickerservice.repository.model.Session;
+import com.assessment.model.SessionDetail;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 
@@ -12,7 +13,7 @@ public class RestaurantPickerValidatorTest {
     @Test
     public void testValidateSessionInitiatorWithMatchingInitiator() {
         RestaurantPickerValidator validator = new RestaurantPickerValidator();
-        com.assessment.model.SessionDetail sessionDetail = new com.assessment.model.SessionDetail();
+        SessionDetail sessionDetail = new SessionDetail();
         sessionDetail.setInitiator("malika");
         Session session = new Session();
         session.setInitiator("malika");
@@ -23,7 +24,7 @@ public class RestaurantPickerValidatorTest {
     @Test
     public void testValidateSessionInitiatorWithDifferentInitiator() {
         RestaurantPickerValidator validator = new RestaurantPickerValidator();
-        com.assessment.model.SessionDetail sessionDetail = new com.assessment.model.SessionDetail();
+        SessionDetail sessionDetail = new SessionDetail();
         sessionDetail.setInitiator("malika");
         Session session = new Session();
         session.setInitiator("test");

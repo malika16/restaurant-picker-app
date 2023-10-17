@@ -2,12 +2,18 @@ package com.assessment.restaurantpickerservice.controller;
 
 import com.assessment.api.RestaurantPickerApi;
 import com.assessment.restaurantpickerservice.service.RestaurantPickerService;
+import com.assessment.model.SessionCreationResponse;
+import com.assessment.model.SessionDetail;
+import com.assessment.model.RestaurantSubmissionRequest;
+import com.assessment.model.RestaurantListResponse;
+import com.assessment.model.SessionEndResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RestController;
+
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,7 +33,7 @@ public class RestaurantPickerController implements RestaurantPickerApi
     }
 
     @Override
-    public CompletableFuture<ResponseEntity<com.assessment.model.SessionCreationResponse>> sessions(com.assessment.model.SessionDetail sessionCreationRequest) {
+    public CompletableFuture<ResponseEntity<SessionCreationResponse>> sessions(SessionDetail sessionCreationRequest) {
         return CompletableFuture.completedFuture(ResponseEntity.status(HttpStatus.CREATED).body(restaurantPickerService.createSession(sessionCreationRequest)));
     }
 
@@ -46,23 +52,23 @@ public class RestaurantPickerController implements RestaurantPickerApi
     }
 
     @Override
-    public CompletableFuture<ResponseEntity<Void>> restaurants(String sessionId, com.assessment.model.RestaurantSubmissionRequest restaurantSubmissionRequest) {
+    public CompletableFuture<ResponseEntity<Void>> restaurants(String sessionId, RestaurantSubmissionRequest restaurantSubmissionRequest) {
         restaurantPickerService.submitRestaurantChoice(sessionId, restaurantSubmissionRequest.getRestaurantName());
         return CompletableFuture.completedFuture(ResponseEntity.ok().build());
     }
 
     @Override
-    public CompletableFuture<ResponseEntity<com.assessment.model.RestaurantListResponse>> submittedRestaurants(String sessionId) {
+    public CompletableFuture<ResponseEntity<RestaurantListResponse>> submittedRestaurants(String sessionId) {
         List<String> submittedRestaurants = restaurantPickerService.getSubmittedRestaurants(sessionId);
-        com.assessment.model.RestaurantListResponse restaurantListResponse = new com.assessment.model.RestaurantListResponse();
+        RestaurantListResponse restaurantListResponse = new RestaurantListResponse();
         restaurantListResponse.setRestaurant(submittedRestaurants);
         return CompletableFuture.completedFuture(ResponseEntity.ok().body(restaurantListResponse));
     }
 
     @Override
-    public CompletableFuture<ResponseEntity<com.assessment.model.SessionEndResponse>> pickRestaurant(String sessionId, com.assessment.model.SessionDetail sessionDetail) {
+    public CompletableFuture<ResponseEntity<SessionEndResponse>> pickRestaurant(String sessionId, SessionDetail sessionDetail) {
         String randomRestaurant = restaurantPickerService.pickRandomRestaurant(sessionId, sessionDetail);
-        com.assessment.model.SessionEndResponse response = new com.assessment.model.SessionEndResponse();
+        SessionEndResponse response = new SessionEndResponse();
         response.setPickedRestaurant(randomRestaurant);
         return CompletableFuture.completedFuture(ResponseEntity.ok().body(response));
     }

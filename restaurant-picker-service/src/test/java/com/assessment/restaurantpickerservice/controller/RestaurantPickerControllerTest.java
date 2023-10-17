@@ -1,32 +1,29 @@
 package com.assessment.restaurantpickerservice.controller;
 
 import com.assessment.model.SessionCreationResponse;
-import com.assessment.restaurantpickerservice.exception.RestaurantPickerException;
+import com.assessment.model.SessionDetail;
+import com.assessment.model.RestaurantListResponse;
 import com.assessment.restaurantpickerservice.service.RestaurantPickerService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(RestaurantPickerController.class)
 public class RestaurantPickerControllerTest {
@@ -50,7 +47,7 @@ public class RestaurantPickerControllerTest {
 
     @Test
     void testCreateSession() throws Exception {
-        com.assessment.model.SessionDetail sessionDetail = new com.assessment.model.SessionDetail();
+        SessionDetail sessionDetail = new SessionDetail();
         SessionCreationResponse sessionCreationResponse = new SessionCreationResponse();
         sessionCreationResponse.setSessionId(SAMPLE_SESSION_ID);
         when(restaurantPickerService.createSession(sessionDetail))
@@ -95,7 +92,7 @@ public class RestaurantPickerControllerTest {
     @Test
     void testSubmittedRestaurants() throws Exception {
         List<String> submittedRestaurants = Arrays.asList("Restaurant1", "Restaurant2");
-        com.assessment.model.RestaurantListResponse response = new com.assessment.model.RestaurantListResponse();
+        RestaurantListResponse response = new RestaurantListResponse();
         response.setRestaurant(submittedRestaurants);
         when(restaurantPickerService.getSubmittedRestaurants(SAMPLE_SESSION_ID))
                 .thenReturn(submittedRestaurants);
@@ -107,7 +104,7 @@ public class RestaurantPickerControllerTest {
 
     @Test
     void testPickRestaurant() throws Exception {
-        com.assessment.model.SessionDetail sessionDetail = new com.assessment.model.SessionDetail();
+        SessionDetail sessionDetail = new SessionDetail();
         when(restaurantPickerService.pickRandomRestaurant(SAMPLE_SESSION_ID, sessionDetail))
                 .thenReturn(SAMPLE_PICKED_RESTAURANT);
         MvcResult mvcResult = mockMvc.perform(post("/sessions/{sessionId}/pickRestaurant", SAMPLE_SESSION_ID)

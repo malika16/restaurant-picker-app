@@ -1,9 +1,10 @@
 package com.assessment.restaurantpickerservice.service;
 
+import com.assessment.model.SessionCreationResponse;
+import com.assessment.model.SessionDetail;
 import com.assessment.restaurantpickerservice.repository.InvitationRepository;
 import com.assessment.restaurantpickerservice.repository.RestaurantRepository;
 import com.assessment.restaurantpickerservice.repository.SessionRepository;
-import com.assessment.restaurantpickerservice.repository.model.Invitation;
 import com.assessment.restaurantpickerservice.repository.model.Session;
 import com.assessment.restaurantpickerservice.repository.model.SessionRestaurant;
 import com.assessment.restaurantpickerservice.validate.RestaurantPickerValidator;
@@ -41,7 +42,7 @@ public class RestaurantPickerServiceTest {
 
     @Test
     public void testCreateSession() {
-        com.assessment.model.SessionDetail sessionDetail = new com.assessment.model.SessionDetail();
+        SessionDetail sessionDetail = new SessionDetail();
         sessionDetail.setInitiator("Malika");
 
         Session session = new Session();
@@ -50,7 +51,7 @@ public class RestaurantPickerServiceTest {
 
         when(sessionRepository.save(any(Session.class))).thenReturn(session);
 
-        com.assessment.model.SessionCreationResponse response = restaurantPickerService.createSession(sessionDetail);
+        SessionCreationResponse response = restaurantPickerService.createSession(sessionDetail);
 
         assertThat(response).isNotNull();
         assertThat(response.getSessionId()).isNotNull();
@@ -108,7 +109,7 @@ public class RestaurantPickerServiceTest {
     @Test
     public void testPickRandomRestaurant() {
         String sessionId = "testSessionId";
-        com.assessment.model.SessionDetail sessionDetail = new com.assessment.model.SessionDetail();
+        SessionDetail sessionDetail = new SessionDetail();
         sessionDetail.setInitiator("Malika");
 
         Session session = new Session();
