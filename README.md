@@ -1,27 +1,31 @@
-# restaurant-picker-app
+# Restaurant Picker Application
 
-This application contains two repos, for backend APIs and for frontend.
- Please refer to the respective README files for the detailed scope and setting up the code and running the application.
+This application consists of two repositories: one for the backend APIs and another for the frontend. Please refer to the respective README files for detailed instructions on setting up and running the application.
 
-## API Swagger
+## API Documentation
 
- https://github.com/malika16/restaurant-picker-app/blob/main/restaurant-picker-service/src/main/resources/openapi/restaurant-picker-api.yaml 
+Explore the API using the Swagger documentation:
 
-## Scope:
+- [Restaurant Picker API Swagger](https://github.com/malika16/restaurant-picker-app/blob/main/restaurant-picker-service/src/main/resources/openapi/restaurant-picker-api.yaml)
 
-1. Create a Session: The application allows a user to create a session, becoming the initiator. A session Id will be generated at backend and is used abstractly in the front end code.
+## Scope
 
-2. Join a Session: Initiators can invite others to join the session. 
+The Restaurant Picker Application offers the following features:
 
-3. Submit a Restaurant: Once in a session, users can submit their restaurant of choice.
+1. **Create a Session:** Users can create a session, becoming the initiators. A session ID is generated at the backend and used abstractly in the frontend code.
 
-4. View Submitted Restaurants: All users within the session can view the list of submitted restaurants. Backend api is used to fetch all restaurants added against the same session id
+2. **Join a Session:** Initiators have the ability to invite others to join their sessions.
 
-5. End a Session: The session initiator can end the session, which triggers the random selection of a restaurant from the submitted list.
+3. **Submit a Restaurant:** Within a session, users can submit their restaurant of choice.
 
-6. Basic Validations are added in the front end code with simple alert mechanism
+4. **View Submitted Restaurants:** All users within a session can view the list of restaurants submitted. The backend API is used to fetch all restaurants added under the same session ID.
 
-7. Central exception handling is done at the service end with error code and message.
-   
-9. Open API specification is used to design  APIS and code generator plugin is used at backend service to create API and DTOs, please refer to pom.xml.
- 
+5. **End a Session:** Session initiators can end the session, which triggers the random selection of a restaurant from the submitted list.
+
+6. **Basic Validations:** The frontend code includes basic validations with a simple alert mechanism.
+
+7. **Exception Handling:** Centralized exception handling is implemented on the service side with error codes and messages.
+
+8. **OpenAPI Specification:** The application uses the OpenAPI specification to design APIs, and the code generator plugin is employed on the backend service to create APIs and DTOs. You can find more information in the `pom.xml` file.
+
+Feel free to explore the API documentation and the corresponding README files for further details on using the Restaurant Picker Application.
