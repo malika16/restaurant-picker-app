@@ -43,7 +43,7 @@ To get a local copy up and running, follow these simple steps.
 
 2.Navigate to the project directory:
 
-    cd restaurant-picker-api
+    cd restaurant-picker-service
 
 3. Build the project using Maven: mvn clean install
 
@@ -53,12 +53,4 @@ To get a local copy up and running, follow these simple steps.
 ### Database Setup
 
 H2 Database has been used here. The credentials are added in the application.properties. No script execution is required.
-
-
-### Features
- 1. Create and manage sessions.
- 2. Invite users to sessions.
- 3. Submit restaurant choices within a session.
- 4. Randomly pick a restaurant from submitted choices. End the session to prevent new entries.
-
 
