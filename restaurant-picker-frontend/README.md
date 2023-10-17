@@ -13,8 +13,6 @@
 5. End a Session: The session initiator can end the session, which triggers the random selection of a restaurant from the submitted list.
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Getting Started
 
 To run the Restaurant Picker App locally, follow these steps:
