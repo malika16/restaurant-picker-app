@@ -47,7 +47,7 @@ To get a local copy up and running, follow these simple steps.
 
 3. Build the project using Maven: mvn clean install
 
-4. To run the API, execute the following command: java -jar target/restaurant-picker-service-1.0-SNAPSHOT.jar
+4. To run the API, execute the following command: java -jar target/restaurant-picker-service-0.0.1-SNAPSHOT.jar
    The API should be running at http://localhost:8080.
 
 ### Database Setup
