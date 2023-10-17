@@ -1,29 +1,26 @@
-# Restaurant Picker API
+## Restaurant Picker API
 
-### API Endpoints
+## API Endpoints
 
-Refer to the API documentation: https://github.com/malika16/restaurant-picker-app/blob/main/restaurant-picker-service/src/main/resources/openapi/restaurant-picker-api.yaml
-for detailed information on these endpoints and their request/response formats.
- 
+For detailed information on these endpoints and their request/response formats, please refer to the [API documentation](https://github.com/malika16/restaurant-picker-app/blob/main/restaurant-picker-service/src/main/resources/openapi/restaurant-picker-api.yaml).
 
 ## API Scope
 
-1. Create a Session API: The api allows a user to create a session, becoming the initiator.
+1. **Create a Session API**: This API allows a user to create a session, becoming the initiator.
 
-2. Join a Session API: Initiators can invite others to join the session. 
+2. **Join a Session API**: Initiators can invite others to join the session.
 
-3. Submit a Restaurant API: Once in a session, users can submit their restaurant of choice. 
+3. **Submit a Restaurant API**: Once in a session, users can submit their restaurant of choice.
 
-4. View Submitted Restaurants API: All users within the session can view the list of submitted restaurants. Backend api is used to fetch all restaurants added against the same session id
+4. **View Submitted Restaurants API**: All users within the session can view the list of submitted restaurants. Backend APIs are used to fetch all restaurants added against the same session ID.
 
-5. Pick Restaurant and end a Session API: The session initiator can end the session, which triggers the random selection of a restaurant from the submitted list.
+5. **Pick Restaurant and End a Session API**: The session initiator can end the session, triggering the random selection of a restaurant from the submitted list.
 
-7. Central exception handling(ControllerAdvice) is done at the service end with error code and message.
-   
-9. Open API code generator plugin is used at backend service to create API and DTOs, please refer to pom.xml.
+7. Central exception handling (`ControllerAdvice`) is implemented at the service end, providing error codes and messages.
 
-10. Validator has been added to do common validations.
+9. The OpenAPI code generator plugin is employed in the backend service to create APIs and DTOs. Please refer to the `pom.xml` for more details.
 
+10. Validators have been added to perform common validations.
 
 ## Prerequisites
 
