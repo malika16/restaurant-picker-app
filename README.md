@@ -4,7 +4,7 @@ This application consists of two repositories: one for the backend APIs and anot
 
 ## API Documentation
 
-Explore the API using the Swagger documentation:
+Explore the API using the Swagger documentation.Copy below yaml to https://editor.swagger.io/ to preview! :
 
 - [Restaurant Picker API Swagger](https://github.com/malika16/restaurant-picker-app/blob/main/restaurant-picker-service/src/main/resources/openapi/restaurant-picker-api.yaml)
 
