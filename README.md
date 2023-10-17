@@ -1,6 +1,7 @@
 # restaurant-picker-app
 
-This application contains two repos, for backend APIs and for frontend. Please refer to the respective README files for setting up the code and running the application.
+This application contains two repos, for backend APIs and for frontend.
+ Please refer to the respective README files for the detailed scope and setting up the code and running the application.
 
 ## API Swagger
 
