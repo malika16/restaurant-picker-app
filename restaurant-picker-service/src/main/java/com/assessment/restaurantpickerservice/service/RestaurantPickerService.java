@@ -45,7 +45,6 @@ public class RestaurantPickerService {
         Session savedSession = sessionRepository.save(session);
         SessionCreationResponse response = new SessionCreationResponse();
         response.setSessionId(savedSession.getSessionId());
-        log.info("Exit");
         return response;
     }
 

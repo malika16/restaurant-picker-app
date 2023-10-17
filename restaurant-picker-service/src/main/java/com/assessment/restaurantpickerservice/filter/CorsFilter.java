@@ -1,4 +1,4 @@
-package com.assessment.restaurantpickerservice.controller;
+package com.assessment.restaurantpickerservice.filter;
 
 import org.springframework.stereotype.Component;
 
