@@ -40,14 +40,14 @@ The Restaurant Picker Application offers the following features:
 
 ## Technical Scope
 
-###6. **OpenAPI Specification:** The application uses the OpenAPI specification to design APIs, and the code generator plugin is employed on the backend service to create APIs and DTOs. You can find more information in the `pom.xml` file.
+###6. OpenAPI Specification:** The application uses the OpenAPI specification to design APIs, and the code generator plugin is employed on the backend service to create APIs and DTOs. You can find more information in the `pom.xml` file.
 
-###7. **Basic Validations:** 
+###7. Basic Validations
  - The frontend code includes basic validations with a simple alert mechanism. The backend service also has a validator for checking some common scenarios.
 
-###8. **Exception Handling:** 
+###8. Exception Handling
   - Centralized exception handling is implemented on the service side with error codes and messages.
 
-###9: **Build and Run:***
+###9: Build and Run
  - Required steps to setup and run have been added in the respective README files [FrontEnd-README](https://github.com/malika16/restaurant-picker-app/blob/main/restaurant-picker-frontend/README.md) and [Service-README](https://github.com/malika16/restaurant-picker-app/blob/main/restaurant-picker-service/README.md)
 
