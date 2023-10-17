@@ -18,7 +18,6 @@ import java.util.concurrent.CompletableFuture;
 import static com.assessment.restaurantpickerservice.util.Constants.COMMA;
 
 @RestController
-//@CrossOrigin(maxAge = 3600)
 @Slf4j
 public class RestaurantPickerController implements RestaurantPickerApi {
     
