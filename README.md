@@ -48,8 +48,9 @@ The Restaurant Picker Application offers the following features:
 ###8. Exception Handling
   - Centralized exception handling is implemented on the service side with error codes and messages.
 
-###9: Integration and Unit test cases are covered for backend service  
+###9: Test Cases
+  - Integration and Unit test cases are covered for backend service  
 
-###9: Build and Run
+###10: Build and Run
  - Required steps to setup and run have been added in the respective README files [FrontEnd-README](https://github.com/malika16/restaurant-picker-app/blob/main/restaurant-picker-frontend/README.md) and [Service-README](https://github.com/malika16/restaurant-picker-app/blob/main/restaurant-picker-service/README.md)
 
