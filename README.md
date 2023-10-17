@@ -42,7 +42,10 @@ The Restaurant Picker Application offers the following features.Screenshots atta
 
 ### 6. OpenAPI Specification
    - The application uses the OpenAPI specification to design APIs, and the code generator plugin is employed on the backend service to create APIs   
-      and DTOs. You can find more information in the `pom.xml` file.
+      and DTOs.
+Can see the detailed documentation generated inside the target folder. 
+restaurant-picker-service/target/generated-sources/openapi/src/main/java/com/assessment/api/RestaurantPickerApi.java
+ You can find more information in the `pom.xml` file.
 
 ### 7. Basic Validations
  - The frontend code includes basic validations with a simple alert mechanism. The backend service also has a validator for checking some common 
