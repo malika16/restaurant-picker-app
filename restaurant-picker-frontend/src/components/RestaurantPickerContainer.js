@@ -103,7 +103,7 @@ function RestaurantPickerContainer() {
       if (response) {
         handleSuccess('Random restaurant picked for lunch: ' + response.pickedRestaurant);
       } else {
-        handleError('Something went wrong, please try again!');
+         handleError('Session ended, please create a new session and try again!');
       }
     } catch (error) {
       console.error(error);
