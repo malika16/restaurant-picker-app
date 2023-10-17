@@ -1,0 +1,22 @@
+{
+  "java17": true,
+  "dateLibrary": "java8",
+  "generateApis": true,
+  "generateApiTests": false,
+  "defaultInterfaces": false,
+  "generateApiDocumentation": true,
+  "responseWrapper": "CompletableFuture",
+  "generateModels": true,
+  "generateModelTests": false,
+  "generateAliasAsModel":true,
+  "generateModelDocumentation": false,
+  "generateSupportingFiles": true,
+  "hideGenerationTimestamp": true,
+  "interfaceOnly": true,
+  "library": "spring-boot",
+  "serializableModel": true,
+  "useBeanValidation": true,
+  "useTags": true,
+  "implicitHeaders": true,
+  "openApiNullable": false
+}

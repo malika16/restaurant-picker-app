@@ -1,0 +1,190 @@
+openapi: 3.0.0
+info:
+  title: Restaurant Selector API
+  version: 1.0.0
+  description: API for managing restaurant sessions and selections.
+
+tags:
+  - name: RestaurantPicker
+    description: This section contains APIs used to create session and pick restuarant
+
+paths:
+  /sessions:
+    post:
+      summary: Create a new session
+      operationId: sessions
+      tags:
+        - RestaurantPicker
+      requestBody:
+        description: User information for session initiation
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionDetail'
+      responses:
+        '201':
+          description: Session created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionCreationResponse'
+        '400':
+          description: Bad request
+
+  /sessions/{sessionId}/invite:
+    post:
+      summary: Invite users to a session
+      operationId: inviteUsers
+      tags:
+        - RestaurantPicker
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          description: ID of the session to invite users to
+          schema:
+            type: string
+            example: 20231009-1200-malika
+        - name: userIds
+          in: query
+          required: true
+          description: IDs of the user to invite
+          schema:
+            type: string
+            example: team_mate_1,team_mate_2
+      responses:
+        '200':
+          description: User invited successfully
+        '404':
+          description: Session not found
+        '400':
+          description: Bad request
+
+  /sessions/{sessionId}/restaurants:
+    post:
+      summary: Submit a restaurant choice
+      operationId: restaurants
+      tags:
+        - RestaurantPicker
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          description: ID of the session to submit a restaurant choice to
+          schema:
+            type: string
+            example: 20231009-1200-malika
+      requestBody:
+        description: Restaurant information
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestaurantSubmissionRequest'
+      responses:
+        '200':
+          description: Restaurant choice submitted successfully
+        '404':
+          description: Session not found
+        '400':
+          description: Bad request
+
+    get:
+      summary: Get all submitted restaurants for a session
+      operationId: submittedRestaurants
+      tags:
+        - RestaurantPicker
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          description: ID of the session to retrieve restaurant choices for
+          schema:
+            type: string
+            example: 20231009-1200-malika
+      responses:
+        '200':
+          description: List of submitted restaurants
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestaurantListResponse'
+        '404':
+          description: Session not found
+
+  /sessions/{sessionId}/pickRestaurant:
+    post:
+      summary: End a session and pick a random restaurant
+      operationId: pickRestaurant
+      tags:
+        - RestaurantPicker
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          description: ID of the session to end
+          schema:
+            type: string
+            example: 20231009-1200-malika
+      requestBody:
+        description: User information for session
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionDetail'
+      responses:
+        '200':
+          description: Session ended successfully, and a restaurant is picked
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionEndResponse'
+        '404':
+          description: Session not found
+        '400':
+          description: Bad request
+
+components:
+  schemas:
+    SessionDetail:
+      type: object
+      properties:
+        initiator:
+          type: string
+          example: malika
+      required:
+        - initiator
+
+    SessionCreationResponse:
+      type: object
+      properties:
+        sessionId:
+          type: string
+          example: 20231009-1200-malika
+
+    RestaurantSubmissionRequest:
+      type: object
+      properties:
+        restaurant_name:
+          type: string
+          example: Marina Bay Sands
+      required:
+        - restaurant_name
+
+    RestaurantListResponse:
+      type: object
+      properties:
+        restaurant:
+          type: array
+          items:
+            type: string
+            example: Marina Bay Sands
+
+    SessionEndResponse:
+      type: object
+      properties:
+        pickedRestaurant:
+          type: string
+          example: Marina Bay Sands
