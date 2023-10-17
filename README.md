@@ -59,10 +59,13 @@ The Restaurant Picker Application offers the following features.Screenshots atta
 
 ## Screenshots
 
-![img](https://github.com/malika16/restaurant-picker-app/assets/23330663/768df5e4-c15c-48d7-83a2-b8aa2d39c795)
-![img_1](https://github.com/malika16/restaurant-picker-app/assets/23330663/e7c426ce-6d52-477c-98aa-3bbf3e559858)
-![img_2](https://github.com/malika16/restaurant-picker-app/assets/23330663/0d810336-4853-46a7-a373-93823cc33964)
-![img_3](https://github.com/malika16/restaurant-picker-app/assets/23330663/13e599ff-e986-4098-b4b4-7dd3b7fdc48f)
+![CreateSession](https://github.com/malika16/restaurant-picker-app/assets/23330663/8c1cf953-9a2a-4306-812a-5b2d71deedde)
+![InviteUsers](https://github.com/malika16/restaurant-picker-app/assets/23330663/6a9f5f56-f29b-41b3-8c42-ef0f068ef5c7)
+![AddRest](https://github.com/malika16/restaurant-picker-app/assets/23330663/e81cfbb4-1380-4d6d-bb8d-a092740b355e)
+![ChooseRandom](https://github.com/malika16/restaurant-picker-app/assets/23330663/39fa8f15-88ba-43e6-b34f-4b25b1796d22)
+
+
+
 
 
 
