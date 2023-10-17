@@ -1,16 +1,18 @@
 # Restaurant Picker App
 
-# Features
+#  UI Scope
 
-1. Create a Session: The app allows a user to create a session, becoming the initiator. A session Id will be generated at backend and is used abstractly in the front end code.
+1. App will be accessible in your web browser at http://localhost:3000. The Landing page will display component to create the session.
+There will be alert generated if no initiator name is added.
+Once session is created, the text box and the create session button will be disabled.
 
-2. Join a Session: Initiators can invite others to join the session. 
+2. Once the session is created, the initiator can invite users to submit their choices against the session. Comma seperated user names can be passed e.g user1,user2
 
-3. Submit a Restaurant: Once in a session, users can submit their restaurant of choice.
+3. The invited users can submit their preferences for the particular session via Add Restaurant component. This component is agnostic to session initiator and the other session users. The users can submit their choices multiple times. There is Add/Close button to the right to show/close this component.
 
-4. View Submitted Restaurants: All users within the session can view the list of submitted restaurants. Backend api is used to fetch all restaurants added against the same session id
+4. All the users can view the restaurants added. The list is fetched from backend.
 
-5. End a Session: The session initiator can end the session, which triggers the random selection of a restaurant from the submitted list.
+5. The initiator can pick the random restaurant. This will mark the session as Closed in backend DB.
 
 
 ## Getting Started
