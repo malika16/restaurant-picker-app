@@ -22,5 +22,5 @@ This application contains two repos, for backend APIs and for frontend. Please r
 
 7. Central exception handling is done at the service end with error code and message.
    
-9. Open API code generator plugin is used at backend service to create API and DTOs, please refer to pom.xml.
+9. Open API specification is used to design  APIS and code generator plugin is used at backend service to create API and DTOs, please refer to pom.xml.
  
