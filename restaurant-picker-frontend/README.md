@@ -2,15 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is a web application designed and built to meet the following requirements:
-
-1.A user can initiate a session and invite others to join it.
-2.Other users who have joined the session may submit a restaurant of their choice.
-3.All users in the session are able to see restaurants that others have submitted.
-4.The user who initiated the session is able to end the session.
-    a. At the end of a session, a restaurant is randomly picked from all submitted restaurants. All users in the session are then able to see the picked restaurant.
-    b. A user should not be able to join a session that has already ended.
-
 ## Getting Started
 
 To run the Restaurant Picker App locally, follow these steps:
@@ -34,3 +25,16 @@ Node.js installed on your machine.
     ### npm start
 
     This will start the development server, and the Restaurant Picker App will be accessible in your web browser at http://localhost:3000.
+
+
+    ## Features
+
+1. Create a Session: The app allows a user to create a session, becoming the initiator. A session Id will be generated at backend and is used abstractly in the front end code.
+
+2. Join a Session: Initiators can invite others to join the session. 
+
+3. Submit a Restaurant: Once in a session, users can submit their restaurant of choice.
+
+4. View Submitted Restaurants: All users within the session can view the list of submitted restaurants. Backend api is used to fetch all restaurants added against the same session id
+
+5. End a Session: The session initiator can end the session, which triggers the random selection of a restaurant from the submitted list.
